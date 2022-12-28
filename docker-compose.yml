@@ -1,0 +1,13 @@
+version: '3'
+services:
+    frontend:
+        container_name: app_container
+        build: ./docker/app
+        ports:
+            - '5173:5173'
+        volumes:
+            - ./frontend:/src
+        stdin_open: true
+        tty: true
+        environment:
+            TZ: Asia/Tokyo
