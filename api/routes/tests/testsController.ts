@@ -1,8 +1,9 @@
 import { Router } from 'express'
+import { GetTests } from './get_tests'
 
 const router = Router()
 router.get('/', (req, res, next) => {
-    res.send('ルーティング完了')
+    new GetTests(req, res).main().catch(next)
 })
 
 export default router
