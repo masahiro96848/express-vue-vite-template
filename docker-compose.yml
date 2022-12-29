@@ -12,6 +12,8 @@ services:
         tty: true
         environment:
             TZ: Asia/Tokyo
+        networks:
+            - default
     api:
         container_name: api_container
         build: ./docker/api
@@ -26,6 +28,8 @@ services:
         depends_on:
             - db
         command: yarn nodemon
+        networks:
+            - default
     db:
         container_name: db_container
         build: ./docker/db
@@ -42,5 +46,9 @@ services:
             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
             - TZ="Asia/Tokyo"
+        networks:
+            - default
+networks:
+    default:
 volumes:
     test_data:
