@@ -1,9 +1,8 @@
 import Express from 'express'
+import tests from './tests/testsController'
 
 const router = Express.Router()
 
-router.get('/', (req, res, next) => {
-    res.send('テスト')
-})
+router.use('/tests', tests)
 
 export default router
