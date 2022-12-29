@@ -12,21 +12,21 @@ services:
         tty: true
         environment:
             TZ: Asia/Tokyo
-#     db:
-#         container_name: db_container
-#         build: ./docker/db
-#         image: mysql:8.0.14
-#         ports:
-#             - 3306:3306
-#         volumes:
-#             - ./db/conf/my.cnf:/etc/mysql/conf.d/mysql.cnf # MySQLの設定をバインド
-#             - ./db/init_db:/docker-entrypoint-initdb.d # 初期データ投入用のsqlファイルをバインド
-#             - test_data:/var/lib/mysql # 永続化したデータをバインド
-#         environment:
-#             - MYSQL_DATABASE=${MYSQL_DATABASE} # コンテナの環境変数から各種設定を読み込み
-#             - MYSQL_USER=${MYSQL_USER}
-#             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-#             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-#             - TZ="Asia/Tokyo"
-# volumes:
-#     test_data:
+    db:
+        container_name: db_container
+        build: ./docker/db
+        image: mysql:8.0.14
+        ports:
+            - 3306:3306
+        volumes:
+            - ./db/conf/my.cnf:/etc/mysql/conf.d/mysql.cnf # MySQLの設定をバインド
+            - ./db/init_db:/docker-entrypoint-initdb.d # 初期データ投入用のsqlファイルをバインド
+            - test_data:/var/lib/mysql # 永続化したデータをバインド
+        environment:
+            - MYSQL_DATABASE=${MYSQL_DATABASE} # コンテナの環境変数から各種設定を読み込み
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - TZ="Asia/Tokyo"
+volumes:
+    test_data:
