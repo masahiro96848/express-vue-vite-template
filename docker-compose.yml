@@ -27,7 +27,6 @@ services:
             TZ: Asia/Tokyo
         depends_on:
             - db
-        command: yarn nodemon
         networks:
             - default
     db:
