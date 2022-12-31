@@ -25,6 +25,7 @@ docker exec -it api_container sh
 npm install
 http://localhost:3000/api/tests
 {"data":"get_tests実行"}が表示していればOK!
+```
 
 ### frontendコンテナに入ってnpmをインストール
 ```
@@ -36,3 +37,12 @@ npm run dev
 http://localhost:5173/ 
 アクセスして表示されればOK!
 ```
+
+### DBコンテナのmysqlの入り方
+```
+docker exec -it db_container sh
+mysql -u root -p -h 127.0.0.1
+
+mysql> 
+になればOK！
+
