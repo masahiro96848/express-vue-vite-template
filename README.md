@@ -13,8 +13,12 @@ docker compose build
 docker compose up -d
 ```
 
-### docker-compose.ymlのapiにcommandを追加
+### docker-compose.ymlのにcommandを追加
 ```
+◎frontend
+command: sh -c "cd ./frontend && npm run dev"
+
+◎api
 command: yarn nodemon
 
 ```
