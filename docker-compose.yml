@@ -65,11 +65,11 @@ services:
             - CHOKIDAR_USEPOLLING=true
         tty: true
         ports:
-            - '8080:8080'
+            - '5173:5173'
         volumes:
             - ./vue:/app
         working_dir: /app
-        command: npm run serve
+        command: npm run dev
         networks:
             - backend
         depends_on:
