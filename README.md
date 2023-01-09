@@ -59,6 +59,12 @@ touch tsconfig.json
 
 ```
 
+```
+# コンテナを出て
+docker-compose up -d
+```
+
+
 下記にアクセス。Expressという文字が出れば成功
 http://localhost:3000　
 
