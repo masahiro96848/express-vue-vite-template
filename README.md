@@ -1,6 +1,11 @@
 # express-vue-vite-template
 フロントエンドはvue、バックエンドはexpress、DBはMysqlを使ったテンプレートです
 
+### git clone
+```
+git clone git@github.com:masahiro96848/express-vue-vite-template.git
+```
+
 ### envをcopy
 ``` 
 cp .env.example .env
@@ -10,6 +15,7 @@ cp .env.example .env
 ```
 docker-compose run --rm --no-deps api /bin/bash
 npm install
+
 ```
 
 下記にアクセス。Expressという文字が出れば成功
