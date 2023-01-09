@@ -15,6 +15,47 @@ cp .env.example .env
 ```
 docker-compose run --rm --no-deps api /bin/bash
 npm install
+npm install cors
+npm i -D @types/cors @types/express @types/node ts-loader typescript webpack webpack-cli webpack-node-externals
+touch tsconfig.json
+```
+
+``` tsconfig.json
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "ES2019",
+    "lib": [
+      "ES2019",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],
+    },
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictFunctionTypes": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+}
 
 ```
 
